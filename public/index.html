@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="text-center">Sky Weather App</h1>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 30px;">
+      <div class="row" style="margin-bottom: 30px;">
+        <div class="col-xs-offset-3 col-xs-6">
+          <input id="weather-forceast-city" type="text" class="form-control" name="city" placeholder="Enter a city name here..."/>          
+        </div>
+        <div class="col-xs-1">
+          <button type="button" id="weather-forecast-init" class="btn btn-success">Go</button>       
+        </div>
+      </div>
+      <div id="weather-forecasts" class="row"></div>
+    </div>
+    <div id="utility-container" style="display:none;">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 weather-forecast">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="pull-left"><canvas class="skycon_icon" width="60" height="60"></canvas></div>
+              <div class="pull-right">
+                <h3><span class="weather-forecast-day"></span></h3>
+                <h4><span class="weather-forecast-date"></span> <span class="weather-forecast-month"></span></h4>
+                <h5><span class="weather-forecast-description"></span></h5>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin-top:10px;">
+            <div class="col-xs-4 text-center">
+              <i class="fa fa-thermometer-three-quarters" style="color:red;" title="Temperature"></i>
+              <span class="weather-forecast-temperature"></span>&deg;C
+            </div>
+            <div class="col-xs-4 text-center">
+              <i class="fa fa-flag" style="color:lightgrey;" title="Wind Speed"></i>
+              <span class="weather-forecast-wind-speed"></span>mph
+            </div>
+            <div class="col-xs-4 text-center">
+              <i class="fa fa-tint" style="color:lightblue;" title="Humidity"></i>
+              <span class="weather-forecast-humidity"></span>%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/skycons/skycons.js"></script>
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>
+<script type="text/javascript">
+$('#weather-forecast-init').on('click',function()
+{
+  var forecasts = new ForecastController($('#weather-forceast-city').val());
+});
+</script>
+<style type="text/css">
+    .weather-forecast {
+      border: 1px solid #dedede;
+    }
+</style>

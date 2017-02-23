@@ -1,0 +1,6 @@
+.weather-forecast {
+  padding: 10px;
+  border: 1px solid #f1f1f1; }
+
+.weather-forecast .pull-right {
+  text-align: right; }
