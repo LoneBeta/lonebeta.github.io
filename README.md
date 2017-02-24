@@ -14,7 +14,7 @@
 </ul>
 <h3>How does it work</h3>
 <ul>
-	<li>Open the the page here: **link goes here**</li>
+	<li>Open the the page here: http://139.59.181.122/public/</li>
 	<li>Enter the city name in the search above at the top of the page</li>
 	<li>Click "Go"</li>
 	<li>Your 5 day weather forecast will display. 6 may display depending on what time of day you use the application.</li>
